@@ -60,16 +60,12 @@
   </style>
 </head>
 <body>
-  <!-- Foto do casal -->
-  <img src="sua-foto.jpg" alt="Foto do casal" id="foto" />
+  <img src="foto.jpeg" alt="Foto do casal" id="foto" />
 
-  <!-- Temporizador -->
   <div class="timer" id="timer">Carregando tempo...</div>
 
-  <!-- Corações animados -->
   <script>
-    // Data de início do relacionamento (ano, mês - 1, dia, hora, minuto, segundo)
-    const startDate = new Date(2023, 1, 14, 20, 0, 0); // Exemplo: 14 de fevereiro de 2023 às 20:00
+    const startDate = new Date(2018, 12, 22, 20, 0, 0);
 
     function updateTimer() {
       const now = new Date();
@@ -90,7 +86,6 @@
     setInterval(updateTimer, 1000);
     updateTimer();
 
-    // Corações flutuando
     function createHeart() {
       const heart = document.createElement("div");
       heart.className = "heart";

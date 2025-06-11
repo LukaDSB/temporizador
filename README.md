@@ -1,1 +1,2 @@
 # temporizador
+![QR](qr.png)

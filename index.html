@@ -1,74 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nosso Amor 💖</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #ffe6f0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      font-family: 'Segoe UI', sans-serif;
-      overflow: hidden;
-      position: relative;
-    }
-
-    img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      border: 5px solid #ff4d88;
-      object-fit: cover;
-      box-shadow: 0 0 30px rgba(255, 77, 136, 0.5);
-      z-index: 1;
-    }
-
-    .timer {
-      margin-top: 20px;
-      font-size: 1.5em;
-      color: #cc0066;
-      z-index: 1;
-      text-align: center;
-      width: 100%;
-      padding: 0 20px;
-    }
-
-    .heart {
-      position: absolute;
-      color: #ff4d88;
-      font-size: 20px;
-      animation: float 5s linear infinite;
-      opacity: 0.8;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) scale(0.5) rotate(0deg);
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) scale(1.2) rotate(360deg);
-        opacity: 0;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <img src="foto.jpeg" alt="Foto do casal" id="foto" />
 
   <div class="timer" id="timer">Carregando tempo...</div>
 
+  <button id="openModalBtn">Clique aqui</button>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="close" id="closeModalBtn">❌</button>
+      <p>
+        Hoje, no Dia dos Namorados, eu quero te lembrar do quanto você é especial — não só pra mim, mas pro mundo.
+      </p>
+      <p>
+        Você passou por dias que pareciam insuportáveis. Dias que te machucaram, que tentaram te convencer de que você não era suficiente. Mas você atravessou todos eles. E mesmo ferido, mesmo cansado, você continuou, suportou o peso da cobrança e da humilhação — por amor, por coragem, por um coração que nunca deixou de ser generoso, mesmo quando o mundo parecia não merecer.
+      </p>
+      <p>
+        Eu te conheci num momento difícil, quando muita gente teria desistido de tentar. Mas ali, bem ali, eu vi um homem incrivelmente forte — mais forte do que você mesmo consegue enxergar. Vi alguém que, mesmo carregando dores profundas, não hesitou em amar de novo, em cuidar, em doar tudo o que tem pelos outros.
+      </p>
+      <p>
+        Você cuida de todos ao seu redor com uma dedicação comovente. Se coloca em situações difíceis, engole o orgulho, se sacrifica — e tudo isso por amor. Nem todos enxergam o tamanho do seu gesto. Mas eu vejo. Eu vejo o pilar que você é, a importância que você tem, mesmo que alguns ainda não saibam demonstrar ou reconhecer.
+      </p>
+      <p>
+        Ter você ao meu lado me transforma. Me ensina a ser melhor. Porque você é incrível, Gabriel. Você me inspira todos os dias. Não só pelo que sente, mas principalmente pelo que enfrenta. Você é a prova de que sensibilidade e força podem, sim, viver juntas em um mesmo coração.
+      </p>
+      <p>
+        Estar ao seu lado me inspira todos os dias. Me faz querer ser melhor, ser mais gentil, mais paciente, mais humano. Porque se o amor é isso — cuidado, sacrifício, verdade — então você é o próprio amor encarnado.
+      </p>
+      <p>
+        Nunca se esqueça disso: Tenho muito orgulho de você! Você é incrível. Você me ensina, me toca e me transforma, simplesmente por ser quem é... me apaixonar por você também fez com que eu me apaixonasse por mim mesmo, e isso é impagável. Você sempre me incentiva a ser uma versão melhor de mim mesmo, por mim, por você, por nós. Quero ficar velhinho ao seu lado.
+      </p>
+      <p><strong>Eu te amo!</strong></p>
+    </div>
+  </div>
+
   <script>
-    const startDate = new Date(2018, 12, 22, 20, 0, 0);
+    const startDate = new Date(2018, 11, 22, 20, 0, 0); // Mês começa do zero!
 
     function updateTimer() {
       const now = new Date();
@@ -102,6 +78,25 @@
     }
 
     setInterval(createHeart, 300);
+
+    const openModalBtn = document.getElementById("openModalBtn");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    const modalOverlay = document.getElementById("modalOverlay");
+
+    openModalBtn.addEventListener("click", () => {
+      modalOverlay.style.display = "flex";
+    });
+
+    closeModalBtn.addEventListener("click", () => {
+      modalOverlay.style.display = "none";
+    });
+
+    modalOverlay.addEventListener("click", (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.style.display = "none";
+      }
+    });
   </script>
 </body>
+
 </html>
